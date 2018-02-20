@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import SME, Team
+from .models import SME, Team, Calendar
 
 # Register your models here.
 class SMEAdmin(admin.ModelAdmin):
@@ -8,7 +8,10 @@ class SMEAdmin(admin.ModelAdmin):
 class TeamAdmin(admin.ModelAdmin):
     list_display = ("teamname")
 
+class CalendarAdmin(admin.ModelAdmin):
+    list_display = ("calname", "calendarteam")
 
 
-admin.site.register(SME)
-admin.site.register(Team)
+admin.site.register(SME,SMEAdmin)
+admin.site.register(Team,TeamAdmin)
+admin.site.register(Calendar,CalendarAdmin)

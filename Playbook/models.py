@@ -31,3 +31,19 @@ class SME(models.Model):
         '''
         verbose_name = _('Subject Matter Expert')
        	verbose_name_plural = _('Subject Matter Experts')
+
+class Team(models.Model):
+    key = models.AutoField(primary_key=True)
+    teamname = models.CharField(max_length=255, null=True, blank=True, verbose_name=_("Team Name"))
+    teammanager = models.ManyToManyField("SME", related_name="team", null=False, blank=False, verbose_name=_("Team Manager"))
+
+
+    def __str__(self):
+        return self.teamname
+
+    class Meta:
+        '''
+        Meta class for the model.
+        '''
+        verbose_name = _('Team')
+       	verbose_name_plural = _('Teams')

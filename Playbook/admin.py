@@ -3,13 +3,13 @@ from .models import SME, Team, Calendar
 
 # Register your models here.
 class SMEAdmin(admin.ModelAdmin):
-    list_display = ("username")
+    list_display = ("username",)
 
 class TeamAdmin(admin.ModelAdmin):
-    list_display = ("teamname")
+    list_display = ("teamname",)
 
 class CalendarAdmin(admin.ModelAdmin):
-    list_display = ("calname", "calendarteam")
+    list_display = ("calname", "calendarteam",)
 
 
 admin.site.register(SME,SMEAdmin)

@@ -117,7 +117,7 @@ class Certificate(models.Model):
     key = models.AutoField(primary_key=True)
     certname = models.CharField(max_length=255, null=True, blank=True, verbose_name=_("Certificate Name"))
     certpass = models.CharField(max_length=255, null=True, blank=True, verbose_name=_("Certificate password"))
-    certpass = models.CharField(max_length=2048, null=True, blank=True, verbose_name=_("Certificate"))
+    certificate = models.CharField(max_length=2048, null=True, blank=True, verbose_name=_("Certificate"))
 
     def __str__(self):
         return self.certname

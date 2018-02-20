@@ -80,3 +80,36 @@ class RecurRule(models.Model):
         '''
         verbose_name = _('Recurrence Rule')
        	verbose_name_plural = _('Recurrence Rules')
+
+class Schedule(models.Model):
+    key = models.AutoField(primary_key=True)
+    schedulename = models.CharField(max_length=255, null=True, blank=True, verbose_name=_("Schedule Name"))
+    schedulecalendar = models.ForeignKey(to=Calendar, related_name="schedcal", on_delete=models.CASCADE, null=False, blank=False, verbose_name=_("Schedule Calendar"))
+    smes = models.ManyToManyField("SME", related_name="teammembr",verbose_name=_("Team Members"))
+
+    def __str__(self):
+        return self.schedulename
+
+    class Meta:
+        '''
+        Meta class for the model.
+        '''
+        verbose_name = _('Schedule')
+       	verbose_name_plural = _('Schedules')
+
+
+class ScheduleRotation(models.Model):
+    key = models.AutoField(primary_key=True)
+    oncall = models.ForeignKey(to=SME, related_name="oncall", on_delete=models.CASCADE, null=False, blank=False, verbose_name=_("OnCall Admin"))
+    order = models.IntegerField(required=True, verbose_name=_("Oncall Order"))
+    oncallschedule = models.ForeignKey(to=Schedule, related_name="oncallschedule", on_delete=models.CASCADE, null=False, blank=False, verbose_name=_("OnCall Schedule"))
+
+    def __str__(self):
+        return self.oncallschedule
+
+    class Meta:
+        '''
+        Meta class for the model.
+        '''
+        verbose_name = _('Schedule Order')
+       	verbose_name_plural = _('Schedule Orders')

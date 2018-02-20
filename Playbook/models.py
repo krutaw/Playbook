@@ -52,7 +52,7 @@ class Team(models.Model):
 class Calendar(models.Model):
     key = models.AutoField(primary_key=True)
     calname = models.CharField(max_length=255, null=True, blank=True, verbose_name=_("Calendar Name"))
-    teammanager = models.ForeignKey(to=Team, related_name="calendarteam", on_delete=models.CASCADE, null=False, blank=False, verbose_name=_("Team Name"))
+    calendarteam = models.ForeignKey(to=Team, related_name="calendarteam", on_delete=models.CASCADE, null=False, blank=False, verbose_name=_("Team Name"))
 
 
 

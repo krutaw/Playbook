@@ -12,6 +12,6 @@ class CalendarAdmin(admin.ModelAdmin):
     list_display = ("calname", "calendarteam",)
 
 
-admin.site.register(SME,SMEAdmin)
-admin.site.register(Team,TeamAdmin)
-admin.site.register(Calendar,CalendarAdmin)
+admin.site.register(SME)
+admin.site.register(Team)
+admin.site.register(Calendar)

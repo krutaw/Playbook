@@ -1,4 +1,14 @@
 from django.db import models
+from django.core.validators import RegexValidator
+from pygments import highlight
+from pygments.formatters.html import HtmlFormatter
+from pygments.lexers import get_all_lexers, get_lexer_by_name
+from pygments.styles import get_all_styles
+from django.utils.translation import ugettext_lazy as _
+
+LEXERS = [item for item in get_all_lexers() if item[1]]
+LANGUAGE_CHOICES = sorted([(item[1][0], item[0]) for item in LEXERS])
+STYLE_CHOICES = sorted((item, item) for item in get_all_styles())
 
 # Create your models here.
 class SME(models.Model):

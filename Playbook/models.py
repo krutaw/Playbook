@@ -38,7 +38,6 @@ class Team(models.Model):
     teammanager = models.ForeignKey(to=SME, related_name="teammgr", on_delete=models.CASCADE, null=False, blank=False, verbose_name=_("Team Manager"))
     smes = models.ManyToManyField("SME", related_name="teammembr",verbose_name=_("Team Members"))
 
-
     def __str__(self):
         return self.teamname
 
@@ -54,8 +53,6 @@ class Calendar(models.Model):
     calname = models.CharField(max_length=255, null=True, blank=True, verbose_name=_("Calendar Name"))
     calendarteam = models.ForeignKey(to=Team, related_name="calendarteam", on_delete=models.CASCADE, null=False, blank=False, verbose_name=_("Team Name"))
 
-
-
     def __str__(self):
         return self.calname
 
@@ -65,3 +62,21 @@ class Calendar(models.Model):
         '''
         verbose_name = _('Calendar')
        	verbose_name_plural = _('Calendars')
+
+
+class RecurRule(models.Model):
+    key = models.AutoField(primary_key=True)
+    rulename = models.CharField(max_length=255, null=True, blank=True, verbose_name=_("Rule Name"))
+    ruledesc = models.CharField(max_length=255, null=True, blank=True, verbose_name=_("Rule Description"))
+    rulefreq = models.CharField(max_length=255, null=True, blank=True, verbose_name=_("Rule Frequency"))
+    ruleparams = models.CharField(max_length=255, null=True, blank=True, verbose_name=_("Rule Parameters"))
+
+    def __str__(self):
+        return self.calname
+
+    class Meta:
+        '''
+        Meta class for the model.
+        '''
+        verbose_name = _('Recurrence Rule')
+       	verbose_name_plural = _('Recurrence Rules')

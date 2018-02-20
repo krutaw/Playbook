@@ -105,7 +105,7 @@ class ScheduleRotation(models.Model):
     oncallschedule = models.ForeignKey(to=Schedule, related_name="oncallschedule", on_delete=models.CASCADE, null=False, blank=False, verbose_name=_("OnCall Schedule"))
 
     def __str__(self):
-        return self.oncallschedule
+        return self.oncallschedule.schedulename
 
     class Meta:
         '''

@@ -23,7 +23,7 @@ class SME(models.Model):
     mtime = models.DateTimeField(auto_now=True)
 
     def __str__(self):
-        return self.SME
+        return self.username
 
     class Meta:
         '''

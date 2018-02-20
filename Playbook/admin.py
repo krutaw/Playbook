@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import SME, Team, Calendar, RecurRule, Schedule, ScheduleRotation
+from .models import SME, Team, Calendar, RecurRule, Schedule, ScheduleRotation, Certificate, Actions
 
 # Register your models here.
 class SMEAdmin(admin.ModelAdmin):
@@ -18,3 +18,5 @@ admin.site.register(Calendar)
 admin.site.register(RecurRule)
 admin.site.register(Schedule)
 admin.site.register(ScheduleRotation)
+admin.site.register(Actions)
+admin.site.register(Certificate)

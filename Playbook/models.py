@@ -66,13 +66,13 @@ class Calendar(models.Model):
 
 class RecurRule(models.Model):
     key = models.AutoField(primary_key=True)
-    rulename = models.CharField(max_length=255, null=True, blank=True, verbose_name=_("Rule Name"))
-    ruledesc = models.CharField(max_length=255, null=True, blank=True, verbose_name=_("Rule Description"))
-    rulefreq = models.CharField(max_length=255, null=True, blank=True, verbose_name=_("Rule Frequency"))
+    rulename = models.CharField(max_length=255, null=False, blank=False, verbose_name=_("Rule Name"))
+    ruledesc = models.CharField(max_length=255, null=False, blank=False, verbose_name=_("Rule Description"))
+    rulefreq = models.CharField(max_length=255, null=False, blank=False, verbose_name=_("Rule Frequency"))
     ruleparams = models.CharField(max_length=255, null=True, blank=True, verbose_name=_("Rule Parameters"))
 
     def __str__(self):
-        return self.calname
+        return self.rulename
 
     class Meta:
         '''

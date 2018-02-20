@@ -31,6 +31,10 @@ Playbook is a workflow engine for performing various tasks from the perspective 
   - Start time
   - End time
   - Recurrence pattern (if any)
+- Schedule order
+  - OnCall SME
+  - Oncall Order
+  - Oncall Schedule (reference to Schedule)
 - Actions
   - Action Type
     - Twilio SMS

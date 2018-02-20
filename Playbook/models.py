@@ -144,6 +144,8 @@ class Actions(models.Model):
     actiontype = models.CharField(max_length=50, choices=actiontypechoices, null=False, blank=False, verbose_name=_("Action Type"))
     assoccert = models.ForeignKey(to=Certificate, related_name="associatedcert", on_delete=models.CASCADE, null=True, blank=True, verbose_name=_("Associated Certificate"))
     actionparams = models.CharField(max_length=1024, null=False, blank=False, verbose_name=_("Action Params"))
+    assocsched = models.ForeignKey(to=Schedule, related_name="associatedsched", on_delete=models.CASCADE, null=True, blank=True, verbose_name=_("Associated Schedule"))
+
 
     def __str__(self):
         return self.actionname

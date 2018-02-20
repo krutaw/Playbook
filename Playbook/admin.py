@@ -5,4 +5,4 @@ from .models import SME
 class SMEAdmin(admin.ModelAdmin):
     list_display = ("user_name")
 
-admin.site.register(SME,SMEAdmin)
+admin.site.register(SME)

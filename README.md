@@ -9,6 +9,7 @@ Playbook is a workflow engine for performing various tasks from the perspective 
 ## Models
 - SMEs (Subject Matter Experts)
   - Cell Phone Number
+  - Username
   - Email address
   - Given name
   - Surname
@@ -19,6 +20,11 @@ Playbook is a workflow engine for performing various tasks from the perspective 
 - Calendars (allow for multiple per team)
   - Calendar name
   - Associated team
+- RecurRule
+  - Name
+  - Description
+  - Frequency
+  - Params
 - Schedule (allow for multiple per Calendar)
   - Schedule name
   - Associated Calendar

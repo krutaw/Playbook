@@ -35,8 +35,8 @@ class SME(models.Model):
 class Team(models.Model):
     key = models.AutoField(primary_key=True)
     teamname = models.CharField(max_length=255, null=True, blank=True, verbose_name=_("Team Name"))
-    teammanager = models.ForeignKey(to=SME, related_name="team", on_delete=models.CASCADE, null=True, blank=True, verbose_name=_("Team Manager"))
-    smes = models.ManyToManyField("SME", related_name="team",verbose_name=_("Team Members"))
+    teammanager = models.ForeignKey(to=SME, related_name="teammgr", on_delete=models.CASCADE, null=True, blank=True, verbose_name=_("Team Manager"))
+    smes = models.ManyToManyField("SME", related_name="teammembr",verbose_name=_("Team Members"))
 
 
     def __str__(self):

@@ -16,7 +16,7 @@ class SME(models.Model):
     username = models.CharField(max_length=255, null=False, verbose_name=_("User name"))
     emailaddress = models.EmailField(max_length=255, null=False, verbose_name=_("Email Address"))
     phoneregex = RegexValidator(regex=r'^(\+\d{1,2}\s)?\(?\d{3}\)?[\s.-]?\d{3}[\s.-]?\d{4}$')
-    phonenumber = models.CharField(max_length=20, null=False,blank=False,validators=[phone_regex])
+    phonenumber = models.CharField(max_length=20, null=False,blank=False,validators=[phoneregex])
     givenname = models.CharField(max_length=255, null=False, blank=False)
     surname = models.CharField(max_length=255, null=False, blank=False)
     ctime = models.DateTimeField(auto_now_add=True)

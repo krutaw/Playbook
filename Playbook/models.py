@@ -48,3 +48,20 @@ class Team(models.Model):
         '''
         verbose_name = _('Team')
        	verbose_name_plural = _('Teams')
+
+class Calendar(models.Model):
+    key = models.AutoField(primary_key=True)
+    calname = models.CharField(max_length=255, null=True, blank=True, verbose_name=_("Calendar Name"))
+    teammanager = models.ForeignKey(to=Team, related_name="calendarteam", on_delete=models.CASCADE, null=False, blank=False, verbose_name=_("Team Name"))
+
+
+
+    def __str__(self):
+        return self.calname
+
+    class Meta:
+        '''
+        Meta class for the model.
+        '''
+        verbose_name = _('Calendar')
+       	verbose_name_plural = _('Calendars')

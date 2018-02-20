@@ -51,3 +51,6 @@ Playbook is a workflow engine for performing various tasks from the perspective 
 ## Interfaces
 - Basic web interface for Playbook definition
 - API for tool interaction
+
+## Logical workflow
+![Logical workflow](https://github.com/krutaw/Playbook/blob/master/Playbook_workflow.png)

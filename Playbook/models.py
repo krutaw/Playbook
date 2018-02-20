@@ -115,7 +115,7 @@ class ScheduleRotation(models.Model):
 
 class Certificate(models.Model):
     key = models.AutoField(primary_key=True)
-    certname = models.CharField(max_length=255, null=True, blank=True, verbose_name=_("Certificate Name"))
+    certname = models.CharField(max_length=255, null=False, blank=False, verbose_name=_("Certificate Name"))
     certpass = models.CharField(max_length=255, null=True, blank=True, verbose_name=_("Certificate password"))
     certificate = models.CharField(max_length=2048, null=True, blank=True, verbose_name=_("Certificate"))
 
@@ -141,8 +141,9 @@ class Actions(models.Model):
         ("ansible","Ansible Playbook"),
         ("recovery_check","Recovery Check"),
     )
-    actiontype = models.CharField(max_length=50, choices=actiontypechoices, null=False, blank=False)
+    actiontype = models.CharField(max_length=50, choices=actiontypechoices, null=False, blank=False, verbose_name=_("Action Type"))
     assoccert = models.ForeignKey(to=Certificate, related_name="associatedcert", on_delete=models.CASCADE, null=True, blank=True, verbose_name=_("Associated Certificate"))
+    actionparams = models.CharField(max_length=1024, null=False, blank=False, verbose_name=_("Action Params"))
 
     def __str__(self):
         return self.actionname

@@ -85,14 +85,13 @@ class Schedule(models.Model):
     key = models.AutoField(primary_key=True)
     schedulename = models.CharField(max_length=255, null=True, blank=True, verbose_name=_("Schedule Name"))
     schedulecalendar = models.ForeignKey(to=Calendar, related_name="schedcal", on_delete=models.CASCADE, null=False, blank=False, verbose_name=_("Schedule Calendar"))
-    smes = models.ManyToManyField("SME", related_name="schedteammembr",verbose_name=_("Team Members"))
 
     def __str__(self):
         return self.schedulename
 
     class Meta:
         '''
-        Meta class for the model.
+        Meta class for the model. 
         '''
         verbose_name = _('Schedule')
        	verbose_name_plural = _('Schedules')

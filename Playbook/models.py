@@ -101,7 +101,7 @@ class Schedule(models.Model):
 class ScheduleRotation(models.Model):
     key = models.AutoField(primary_key=True)
     oncall = models.ForeignKey(to=SME, related_name="oncall", on_delete=models.CASCADE, null=False, blank=False, verbose_name=_("OnCall Admin"))
-    order = models.IntegerField(required=True, verbose_name=_("Oncall Order"))
+    order = models.IntegerField(null=False, blank=False, verbose_name=_("Oncall Order"))
     oncallschedule = models.ForeignKey(to=Schedule, related_name="oncallschedule", on_delete=models.CASCADE, null=False, blank=False, verbose_name=_("OnCall Schedule"))
 
     def __str__(self):

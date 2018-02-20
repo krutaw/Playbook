@@ -91,7 +91,7 @@ class Schedule(models.Model):
 
     class Meta:
         '''
-        Meta class for the model. 
+        Meta class for the model.
         '''
         verbose_name = _('Schedule')
        	verbose_name_plural = _('Schedules')
@@ -112,3 +112,44 @@ class ScheduleRotation(models.Model):
         '''
         verbose_name = _('Schedule Order')
        	verbose_name_plural = _('Schedule Orders')
+
+class Certificate(models.Model):
+    key = models.AutoField(primary_key=True)
+    certname = models.CharField(max_length=255, null=True, blank=True, verbose_name=_("Certificate Name"))
+    certpass = models.CharField(max_length=255, null=True, blank=True, verbose_name=_("Certificate password"))
+    certpass = models.CharField(max_length=2048, null=True, blank=True, verbose_name=_("Certificate"))
+
+    def __str__(self):
+        return self.certname
+
+    class Meta:
+        '''
+        Meta class for the model.
+        '''
+        verbose_name = _('Certificate')
+       	verbose_name_plural = _('Certificates')
+
+
+class Actions(models.Model):
+    key = models.AutoField(primary_key=True)
+    actionname = models.CharField(max_length=255, null=True, blank=True, verbose_name=_("Action Name"))
+    actiontypechoices = (
+        ("twilio_sms","Twilio SMS"),
+        ("twilio_call","Twilio Call"),
+        ("hipchat","HipChat"),
+        ("email","Email"),
+        ("ansible","Ansible Playbook"),
+        ("recovery_check","Recovery Check"),
+    )
+    actiontype = models.CharField(max_length=50, choices=actiontypechoices, null=False, blank=False)
+    assoccert = models.ForeignKey(to=Certificate, related_name="associatedcert", on_delete=models.CASCADE, null=True, blank=True, verbose_name=_("Associated Certificate"))
+
+    def __str__(self):
+        return self.actionname
+
+    class Meta:
+        '''
+        Meta class for the model.
+        '''
+        verbose_name = _('Action')
+       	verbose_name_plural = _('Actions')

@@ -1,5 +1,7 @@
-from django.shortcuts import render
 from rest_framework import viewsets
+from Playbook.models import SME
+from Playbook.serializers import SMESerializer
+
 
 class SMEViewSet(viewsets.ModelViewSet):
     """

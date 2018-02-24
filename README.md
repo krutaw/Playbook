@@ -6,7 +6,9 @@
 Playbook is a workflow engine for performing various tasks from the perspective of the NOC (Network Operations Center) team's perspective.  The basic idea is to wrap tooling around action items that are performed when something happens.  This could be restarting a service, calling the SME who is on-call via Twilio, etc.
 
 ## Standards
-It should be expected that all code should pass linter.
+- Language
+  - All code shall conform to Python 3.6+
+  - All code shall pass Python Linter
 
 ## Models
 - SMEs (Subject Matter Experts)

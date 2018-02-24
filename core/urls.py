@@ -13,6 +13,7 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
+from django.conf.urls import include, url
 from django.contrib import admin
 from django.urls import path
 from Playbook import views
@@ -20,8 +21,9 @@ from rest_framework.routers import DefaultRouter
 
 
 router = DefaultRouter()
-router.register(r'SME', views.SMEViewSet, base_name='api_base')
+router.register(r'SME', views.SMEViewSet)
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    url(r'api/', include(router.urls), name='api'),
 ]

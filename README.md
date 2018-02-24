@@ -69,3 +69,9 @@ Playbook is a workflow engine for performing various tasks from the perspective 
 
 ## Logical workflow
 ![Logical workflow](https://github.com/krutaw/Playbook/blob/master/Playbook_workflow.png)
+
+## Installation
+- Clone
+- Update core/Settings.py
+  - REST_FRAMEWORK
+    - URL_FIELD_NAME

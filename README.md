@@ -75,3 +75,6 @@ Playbook is a workflow engine for performing various tasks from the perspective 
 - Update core/Settings.py
   - REST_FRAMEWORK
     - URL_FIELD_NAME
+
+## Contributing
+Please feel free to contribute or assist, this is literally a side project for me that I'm hoping will be useful to others.

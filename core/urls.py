@@ -16,6 +16,11 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from Playbook import views
+from rest_framework.routers import DefaultRouter
+
+
+router = DefaultRouter()
+router.register(r'SME', views.SMEViewSet, base_name='api_base')
 
 urlpatterns = [
     path('admin/', admin.site.urls),

@@ -77,4 +77,4 @@ Playbook is a workflow engine for performing various tasks from the perspective 
     - URL_FIELD_NAME
 
 ## Contributing
-Please feel free to contribute or assist, this is literally a side project for me that I'm hoping will be useful to others.
+Please feel free to contribute or assist, this is literally a side project for me that I'm hoping will be useful to others.  Please perform commits to the development branch and then do a pull request to merge into master.

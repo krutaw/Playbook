@@ -179,3 +179,41 @@ class Actions(models.Model):
         '''
         verbose_name = _('Action')
         verbose_name_plural = _('Actions')
+
+
+class Play(models.Model):
+    '''
+    Play  Model
+    '''
+    key = models.AutoField(primary_key=True)
+    playname = models.CharField(max_length=255, null=False, blank=False, verbose_name=_("Play Name"))
+    playorder = models.IntegerField(null=False, blank=False, verbose_name=_("Play Order"))
+    playcommand = models.CharField(max_length=255, null=False, blank=False, verbose_name=_("Play Command"))
+    retries = models.IntegerField(null=False, blank=False, verbose_name=_("Retry Count"))
+    recovercommand = models.CharField(max_length=255, null=False, blank=False, verbose_name=_("Recovery Check Command"))
+
+    def __str__(self):
+        return self.playname
+
+    class Meta:
+        '''
+        Meta class for the model.
+        '''
+        verbose_name = _('Play')
+        verbose_name_plural = _('Plays')
+        ordering = ['playorder']
+
+
+class PlayBook(models.Model):
+    '''
+    PlayBook Model
+    '''
+    key = models.AutoField(primary_key=True)
+    bookname = models.CharField(max_length=255, null=False, blank=False, verbose_name=_("Playbook Name"))
+    orderedplay = models.ManyToManyField("Play", related_name="play", verbose_name=_("Play Name"))
+
+    class Meta:
+        '''
+        Meta class for the model.
+        '''
+        ordering = ['orderedplay']

@@ -22,6 +22,13 @@ from rest_framework.routers import DefaultRouter
 
 router = DefaultRouter()
 router.register(r'SME', views.SMEViewSet)
+router.register(r'Team', views.TeamViewSet)
+router.register(r'Calendar', views.CalendarViewSet)
+router.register(r'Schedule', views.ScheduleViewSet)
+router.register(r'ScheduleRotation', views.ScheduleRotationViewSet)
+router.register(r'Actions', views.ActionsViewSet)
+router.register(r'Play', views.PlayViewSet)
+router.register(r'PlayBook', views.PlayBookViewSet)
 
 urlpatterns = [
     path('admin/', admin.site.urls),

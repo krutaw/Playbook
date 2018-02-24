@@ -5,6 +5,8 @@
 ## What is this?
 Playbook is a workflow engine for performing various tasks from the perspective of the NOC (Network Operations Center) team's perspective.  The basic idea is to wrap tooling around action items that are performed when something happens.  This could be restarting a service, calling the SME who is on-call via Twilio, etc.
 
+## Standards
+It should be expected that all code should pass linter.
 
 ## Models
 - SMEs (Subject Matter Experts)
@@ -40,9 +42,10 @@ Playbook is a workflow engine for performing various tasks from the perspective 
     - Twilio SMS
     - Twilio Phone call
     - HipChat notification
+      - Hipchat Room
     - Email
     - Ansible playbook
-    - Associated certificate
+      - Associated certificate
     - Recovery check
   - Action Name
 - Auth Certificate

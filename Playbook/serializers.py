@@ -12,12 +12,6 @@ class SMESerializer(serializers.ModelSerializer):
     '''
     SME Serializer
     '''
-    username = serializers.CharField(required=True, allow_null=True)
-    emailaddress = serializers.CharField(required=True, allow_null=True)
-    phonenumber = serializers.CharField(required=True, allow_null=True)
-    givenname = serializers.CharField(required=True, allow_null=True)
-    surname = serializers.CharField(required=True, allow_null=True)
-
     class Meta:
         '''
         Meta class for the serializer.

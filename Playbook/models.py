@@ -212,8 +212,8 @@ class PlayBook(models.Model):
     bookname = models.CharField(max_length=255, null=False, blank=False, verbose_name=_("Playbook Name"))
     orderedplay = models.ManyToManyField("Play", related_name="play", verbose_name=_("Play Name"))
 
-    class Meta:
-        '''
-        Meta class for the model.
-        '''
-        ordering = ['orderedplay']
+    # class Meta:
+    #     '''
+    #     Meta class for the model.
+    #     '''
+    #     ordering = ['play']
